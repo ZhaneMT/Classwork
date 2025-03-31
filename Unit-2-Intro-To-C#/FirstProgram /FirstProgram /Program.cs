@@ -91,7 +91,7 @@ class Program
         // Console.Readline() returns a string - cannot store in an int
         
         Console.WriteLine("Please enter the first number: "); // Asking for the number
-        Console.ReadLine();                              // Get a line from the keyboard
+     //   Console.ReadLine();                              // Get a line from the keyboard
         string aLine;       //String to hold the line of input from keyboard
         aLine = Console.ReadLine();
         
