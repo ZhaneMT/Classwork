@@ -88,25 +88,42 @@ class Program
         
         // Ask for the numbers one at time using the C# Console object
         //  which represents the keyboard and screen
-        // Console.Readline() returns a string - cannot store in an int
-        
+        // Console.Readline() returns a string from the keyboard - cannot store in an int
+
         Console.WriteLine("Please enter the first number: "); // Asking for the number
-     //   Console.ReadLine();                              // Get a line from the keyboard
-        string aLine;       //String to hold the line of input from keyboard
+        string aLine;
         aLine = Console.ReadLine();
+        number1 = int.Parse(aLine);
+        
+        Console.WriteLine("Please enter the second number: " );
+        number2 = int.Parse(aLine);
+                                        //String to hold the line of input from keyboard
+        aLine = Console.ReadLine(); // Get a line from the keyboard102
+        
+        
+        Console.WriteLine("Please enter the third number: ");
+        aLine = Console.ReadLine();
+        number3 = int.Parse(aLine);
+        
         
         // We need an int value to store our numbers
        // Console.ReadLine() only returns a string.
        // So we need to convert the string from Console.ReadLine() to an int.
        // int.Parse(string) will convert a string to an int
        
-       number1 = int.Parse(aLine);
        
-       // Verify that I got the data I expected
-       // Display some words and the value I received.
-       // "string" + something is called concatenation (it sticks them together)
+       // This variable defines the sum by adding all 3 intergers
+       // Step 2. Add all integers
+       sum = number1 + number2 + number3;
        
-       Console.WriteLine("You entered: " + number1);
+       // Alternative ways to do this:
+       // However you code as long as it is the correct solution. 
+       // sum = sum + number1;
+       // sum = sum + number2;
+       // sum = sum + number3;
+       
+       // 3. The sum is TADAAAA!
+       Console.WriteLine("The sum is: " + sum);
        
         Console.WriteLine("-----Ending Program----");
     }
