@@ -86,7 +86,11 @@ class Program
     // method parameters go inside ()
     static double Subtract(double num1, double num2)
     {
+        // If a bool is being returned all you need is the conditional expression
+        // (Don't need to have an if-else - its OK if you do)
         return num1 - num2;  // (num1 - num2)  - parentheses optional 
+        // 1.   C# will evaluate the num1==num2 - result is true or false
+        // 2.   return the result from step 1
     } // End of Subtract()
 
     
@@ -100,23 +104,54 @@ class Program
     */
     static string FindBuildingType(int num1)
     {
-        if (num1 <= 3)
-        {
-            return "This is a house";
-        }
-        else if (num1 >=4 && num1 <= 10)
-        {
-            return "This is an office building!";
-        }
-        else if (num1 >=11 && num1 <= 49)
-        {
-            return "This is a skyscraper!";
-        }
+       // Solution using a switch statement 
+       // a switch is alternative to a series of if-else states
+       //
+       // case statement identifies the condition you want to check 
+       //
+       // two formats of case statement:
+       //
+       //1. case value - when you want to check the switch variable equal the value
+       //2. Case datatype variable when condition - when you want to check for something other than equals
+       //               th value in the switch variable is assigned to variable defined after a case.        
 
-        // We KNOW if we get here the number has to be 50 or greater 
-        // We've handled all other situations alread
-        return "This is a SUPER skyscraper!";
-        
+       switch (num1) //check the value in num1 to the new integer house
+       {
+           case int house when house <= 3:
+           {
+               return "This is a house";
+           }
+           case int office when office >= 4 && office <= 10:
+           {
+               return "This is an office";
+           }
+           case int skyscraper when skyscraper >= 11 && skyscraper <= 49:
+           {
+               return "This is a skyscraper";
+           }
+           default: //if not of the case are true do this
+           {
+               return "This is a SUPER skyscrapper";
+           }
+       }
+
+       // if (num1 <= 3)
+        // {
+        //     return "This is a house";
+        // }
+        // else if (num1 >=4 && num1 <= 10)
+        // {
+        //     return "This is an office building!";
+        // }
+        // else if (num1 >=11 && num1 <= 49)
+        // {
+        //     return "This is a skyscraper!";
+        // }
+        //
+        // // We KNOW if we get here the number has to be 50 or greater 
+        // // We've handled all other situations alread
+        // return "This is a SUPER skyscraper!";
+        //
         // This return is required because C# doesn't know that we've handled all possible situations
         // so it wants a return in case we haven't
         //
