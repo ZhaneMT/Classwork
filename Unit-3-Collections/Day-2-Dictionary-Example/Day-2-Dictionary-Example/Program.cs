@@ -1,5 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;  // Give me access to the systems generic collections stuff
+using System.Collections.Generic;
+using System.Net.Sockets; // Give me access to the systems generic collections stuff
 
 namespace Day_2_Dictionary_Example
 {
@@ -76,12 +77,51 @@ namespace Day_2_Dictionary_Example
             // use the KeyValuePair object in the foreach
             //
             // KeyValuePair<key-type, value-type> name-for-dictionary-entry
+            //
+            // KeyValuePair return the key and associated value from the Dictionary
+            // 
+            // .Key - access the key
+            // .Value - access the value 
+            
+            // get each key/value pair and store it in variable called anEntry
 
             foreach (KeyValuePair<string, int> anEntry in personInfo)
             {
                 Console.WriteLine(anEntry.Key + " lives in zip code " + anEntry.Value);
             }
-                 
+            // Ask the user for a name and a grade 
+            // Store them in a Dictionary ---> Key = name and grade = value
+            //          key     value
+            //          type    type    name     = new Dictionary<key-type, value>();
+            
+            Dictionary<string, double> gradeBook = new Dictionary<string, double>();
+            // Let's add 3 students
+            // Ask the user for student name
+            
+            
+            //Add the data to our dictionary 
+            // Dictionary [key]     = value;
+
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine("Please enter the student name: ");
+                string studentName = Console.ReadLine();
+            
+                Console.WriteLine("Please enter the student grade: ");
+                double studentGrade = Double.Parse(Console.ReadLine());
+
+                gradeBook[studentName] = studentGrade; // gradeBook.Add(studentName, grade) // may cause an exception
+
+            }
+            //Display the entrys in oue Dictionary
+            // Use a KeyValuePair type to get an entry from the dictionary
+            foreach (KeyValuePair<string, double> entry in gradeBook)
+            {
+                Console.WriteLine("student name is " + entry.Key + " and grade is " + entry.Value + "%");
+            }
+            
+            
+            
             Console.WriteLine("Please press enter to end program...");
             Console.Read();
         }
