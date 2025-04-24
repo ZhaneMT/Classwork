@@ -15,6 +15,9 @@
 //     the methods that manipulate the class data (behaviors of the object)
 //
 //  class can do whatever a programmer decides it should or shouldn't do
+//public is used so any one can istaniate objects of the class
+
+// This class represents a student and their test scores
 public class Student
 {
     // Define the data for our class
@@ -48,7 +51,26 @@ public class Student
     // Define a constructor to initialize our data with values 
     //          specified by the user
 
-    public Student(string name, List<int> scores)
+    // As the class Designer YOU decide what you need to properly initialize objects of the class
+    // YOU decided how constructors you need or how users of the class can initialize your objects.
+    //
+    // Default valu eis a value used when the real value is not known
+    //
+    // Do we want to allow an object with default values?
+    //      Does is make sense to not have a defaukt student name default student scores?
+    //              No - Dont code a default ctor to initialize with default values.
+    //              Yes -  Code a 0-arg ctor that takes the name and assignes it studentName 
+    //                                                  and assigns an empty list to testScores
+
+    public Student(string theName) // 1-arg constructor to accept a name only
+    {
+        studentName = theName;
+        testScores = new List<int>();
+    }
+    
+    
+    public Student(string name, List<int> scores) // 2 -arg constructor
+                                                // two parameters ysed to initialize an object
     {
         studentName = name;  // Set the class data to the data passed in from the user
         testScores = scores; // Set the class data to the data passed in from the user
@@ -56,14 +78,55 @@ public class Student
     
     // Provide a method to display our data
     // (Console.WriteLine() doesn't know how to do it)
+   
+    /********************************************************************
+     * METHODS TO MALUPULATE THE CLASS
+     ******************************************************************/
+    
+    // We need a method to allow the user to add scores to our testScores List
+    // Every method requires a method signature and a body
+    // Method signiture :   access  return
+    //                      type    type
+// When creating a method you do        Method body: Inside {} following method signature. 
+    public void AddScore(int score)
+    {
+        testScores.Add(score);
+    }
+    // Allow the user to get the sum of the scores
+    // WE need a method to add up the scores and return
+    public double SumOfScores() // No args needed  needed as we have access to all the data we need in class
+    {
+        //Define a variable to hold what we returning
+        double sum = 0;
+        
+        // Two ways we can do this:
+        //  1.Use a for each loop
+        //  2. See if there is method for List that do the sum for us
+                    //(There seems to be a method we could use, but it looks complicated )
+
+                    foreach (double score in testScores)
+                    {
+                        sum = sum + score; // sum += 
+                    }
+
+                    return sum;
+    }
+
+    public double AvgOfScores()
+    {
+        return SumOfScores() / testScores.Count; // Using a class method inside another class method
+    }
+    
+    
+    
     public void ShowStudent()
     {
-        Console.WriteLine("Name: " + studentName);
-        Console.WriteLine("Scores: ");
+        Console.WriteLine("\nName: " + studentName);
+        Console.Write("Scores: ");
 
         foreach (int score in testScores)
         {
-            Console.WriteLine(score);
+            Console.Write(score + " "); //Display on same line
         }
     }
     

@@ -33,8 +33,9 @@ class Program
     scores.Add(100);
 
     // Instantiate a Student using the data we want to store in the Student object
-    Student aStudent = new Student("Frank", scores);
-    Student aStudent2 = new Student("Marquise", scores2);
+    // ClassName objName = new ClassName(initial-name, initial-socres)
+    Student aStudent = new Student("Frank", scores);        // Calling the 2-arg ctor that takes a name and scores
+    Student aStudent2 = new Student("Marquise", scores2);   // Calling 
     
     // Display the Student object we created
     // Console.WriteLine() does not now how to display an object of our class
@@ -46,6 +47,22 @@ class Program
     aStudent.ShowStudent();
     aStudent2.ShowStudent();
     
+    // Define a student with no socres:
+    Student johnTheStudent = new Student("John");
+    johnTheStudent.ShowStudent();
+    
+    // Add some scores to John the student
+    johnTheStudent.AddScore(86);
+    johnTheStudent.AddScore(90);
+    johnTheStudent.AddScore(20);
+    johnTheStudent.AddScore(67);
+    johnTheStudent.AddScore(99);
+
+
+    johnTheStudent.ShowStudent();
+    
+    Console.WriteLine($"\n ");
+
     //Console.WriteLine(aStudent.studentName);
     }
 }
