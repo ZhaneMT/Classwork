@@ -114,7 +114,7 @@ public class Student
 
     public double AvgOfScores()
     {
-        return SumOfScores() / testScores.Count; // Using a class method inside another class method
+        return Math.Round(SumOfScores() / testScores.Count, 2);
     }
     
     
@@ -129,5 +129,26 @@ public class Student
             Console.Write(score + " "); //Display on same line
         }
     }
+    /*
+     *
+     *
+     *
+     */
+    public string GetStudentName()
+    {
+        return studentName; // return the value in this private member
+    }
+
+    public List<double> GetTestScores()
+    {
+        return testScores; // return the value in this privacte data member
+    }
+    
+    /*************************************************
+    Methods to manipulate strubg
+     *********************************************
+     * We need to provide a ToString() method 
+     * 
+     */
     
 }

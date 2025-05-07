@@ -61,8 +61,15 @@ class Program
 
     johnTheStudent.ShowStudent();
     
-    Console.WriteLine($"\n ");
+    Console.WriteLine($"\n The sum of scores: {johnTheStudent.SumOfScores()} ");
+    Console.WriteLine($"\n The sum of scores: {johnTheStudent.SumOfScores()} ");
 
-    //Console.WriteLine(aStudent.studentName);
+
+    //Console.WriteLine(aStudent.studentName);'
+    
+    // I want see just the name of a student
+    // Use have to a getter (if it esist to access the datta)
+    
+    Console.WriteLine($"aStudent object has ");
     }
 }
