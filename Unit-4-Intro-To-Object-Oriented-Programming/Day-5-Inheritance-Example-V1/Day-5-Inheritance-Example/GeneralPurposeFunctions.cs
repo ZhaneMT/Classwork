@@ -4,6 +4,7 @@ namespace GeneralPurposeFunctions
 {
     public class CommonlyUsedFunctions
     {
+        
         /************************************************************************************
          * Display a separator line block with a message
          ************************************************************************************/

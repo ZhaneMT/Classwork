@@ -144,6 +144,8 @@ namespace Day_5_Inheritance_Example
         }
 
         // Equals returns true to data members of two objects are equal
+        // Default equals() only compares the contents of the refrence variable (locations)
+        // If you wan tto compare the contents of the onjects - Create an Equals() overide
         public override bool Equals(object otherObject)
         {
             if (otherObject.GetType() != this.GetType())  // If types differ...

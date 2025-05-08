@@ -33,7 +33,7 @@ namespace Day_5_Inheritance_Example
              *************************************************************************/
 
             // PlayingCard newCard = aCard;  // This makes both newCard and aCard point to the same object
-            PlayingCard newCard = new PlayingCard(aCard); // Use copy constructor
+             PlayingCard newCard = new PlayingCard(aCard); // Use copy constructor
 
             Console.WriteLine($"  aCard is: {aCard}");
             Console.WriteLine($"newCard is: {newCard}");
@@ -68,9 +68,18 @@ namespace Day_5_Inheritance_Example
             //      (or the generic Object ToString() if base class doesn't have one)
 
             Console.WriteLine($"theCard: {theCard}");
-
+/*
+ *
+ *      -----------------INHERETENCE BASED CODE STARTS HERE--------------------------------
+ * 
+ */
+            myFuncs.WriteSeparatorLine("Inherentince stuff starts here...");
+            
             AmericanPlayingCard theCard2 = new AmericanPlayingCard(10, "Spades");
 
+            // Display what's in AmericanPlayingCard
+            theCard2.ShowCard();    // Use the AmericanPlayingCard method to displau the card
+            
             // This will use the PlayingCard .Equals() method
             // Since the AmericanPlayingCard does not have a Equals() method override
             //      when C# needs to use an Equals() method for an AmericanPlayingCard
@@ -103,17 +112,29 @@ namespace Day_5_Inheritance_Example
 
             myFuncs.WriteSeparatorLine("Display AmericanPlayingCard using base class ToString()");
 
-            Console.WriteLine(usaCard1);
+            Console.WriteLine(usaCard1);// WriteLine will look for a ToString() method to get a string
+                                        // representation of the class.
+                                        // usaCard is an AmericanPlayingCard object
+                                        // The AmericanPlayingCard class DOES NOT Have an ToString() method
+                                        // SO it looks to the super class of AmericanPlayingCards
+                                        /// 
             Console.WriteLine(usaCard2);
 
             myFuncs.WriteSeparatorLine("Compare two AmericanPlayingCards");
 
             Console.Write($"1st card: {usaCard1.CardValue} ({usaCard1.GetCardValueName()}) of {usaCard1.CardSuit}");
-            
+            // The super class .Equals() is used because our subclass doesn't have one
+            //                  (condition)                 ? value-if-true : value-if-false
             Console.Write($"{(usaCard1.Equals(usaCard2) ? " is EQUAL" : " is NOT equal")} to");
 
             Console.Write($" 2nd card: {usaCard2.CardValue} ({usaCard2.GetCardValueName()}) of {usaCard2.CardSuit}\n");
-
+            // DEfine an 2 of Coins which is Yellow
+            ItalianPlayingCard aItalianPlayingCard = new ItalianPlayingCard(2, "Coins", "Yellow");
+           
+            // Deine an 10 of Swords which is Red
+            ItalianPlayingCard aItalianPlayingCard = new ItalianPlayingCard(10, "Swords", "Red");
+            
+            Console.WriteLine(a);
             myFuncs.PauseProgram();
             
             myFuncs.WriteSeparatorLine("Thanks for trying out our first OOP application!");
