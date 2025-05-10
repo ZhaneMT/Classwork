@@ -63,6 +63,7 @@ namespace Day_6_Polymorphism
                 base.CardSuit = DEFAULT_SUIT;        //     set the card suit to the default
             }
 
+            // We can't really set the color until we know the suit
             base.CardColor = suitsColors[base.CardSuit]; // Set the card color based on the suit
         }
 
@@ -117,7 +118,7 @@ namespace Day_6_Polymorphism
 
         public string GetCardValueName()
         {
-            return cardValueName[base.CardValue];  // Use the card value as an an index to name array
+            return cardValueName[base.CardValue];  // Use the card value as as an index to name array
         }
 
         // Display an object of the class

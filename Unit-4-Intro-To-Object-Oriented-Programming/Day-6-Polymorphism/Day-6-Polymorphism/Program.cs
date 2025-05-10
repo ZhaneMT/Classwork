@@ -130,21 +130,22 @@ namespace Day_6_Polymorphism
              ******************************************************************************/
 
             myFuncs.WriteSeparatorLine("Create a collection of various PlayingCard types and process them");
-
+    //      Define a list of 
             List<PlayingCard> someCards = new List<PlayingCard>();
 
-            someCards.Add(blackJackCard1);
-            someCards.Add(usaCard2);
-            someCards.Add(swissCard3);
-            someCards.Add(usaCard3);
-            someCards.Add(italianCard1);
-            someCards.Add(blackJackCard3);
-            someCards.Add(usaCard1);
-            someCards.Add(swissCard2);
+            someCards.Add(blackJackCard1);      //Store a subclass object in the super class List
+            someCards.Add(usaCard2);           //Store a subclass object in the super class List
+            someCards.Add(swissCard3);        //Store a subclass object in the super class List
+            someCards.Add(usaCard3);         //Store a subclass object in the super class List
+            someCards.Add(italianCard1);    //Store a subclass object in the super class List
+            someCards.Add(blackJackCard3); //Store a subclass object in the super class List
+            someCards.Add(usaCard1);      //Store a subclass object in the super class List
+            someCards.Add(swissCard2);  //Store a subclass object in the super class List
 
+            // Loop through the List using a super class object
             foreach (PlayingCard aPlayingCard in someCards)
             {
-                aPlayingCard.ShowCard();
+                aPlayingCard.ShowCard(); 
             }
 
             myFuncs.WriteSeparatorLine("Thanks for trying out The Polymorphism Example!");
