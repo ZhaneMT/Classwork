@@ -7,8 +7,13 @@ namespace Day_6_Abstract_Classes
     // This is class to represent a simple PlayingCard
     // It's in the same namespace as the application (for now and for simplicity)
     //
-
-    public class PlayingCard
+// Its in the same namespace as the application (for now and for simplicity)
+//
+// any generic methods must be changed from virtual to abstract
+//virtual means a subclass MAY override the behavior of the method
+//virtual method provides default behavior in an inheritance hierarchy
+//                              must provide the behavior
+    public abstract class PlayingCard
     {
     /*********************************************************************
      * Data members (attributes, properties, variables)
@@ -154,7 +159,9 @@ namespace Day_6_Abstract_Classes
             return CardValue * 17 + CardColor.GetHashCode() + CardSuit.GetHashCode();
         }
 
-        public virtual void ShowCard()
+        // abstract method tells any subclass you must provide this behaivor 
+        // (abstract class doesn't define it)
+        public abstract void ShowCard() // no {}for the method body
         {
             Console.WriteLine(this);
         }
