@@ -32,6 +32,7 @@ public class PlayingCard
 
     public enum CardValue
     {  // Using the fact that enums are really integers inside value to name our values
+        // 0    1   2       3   4       5   6       7   8       9    10
         Joker, One, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King, Ace
     };
 
@@ -44,8 +45,11 @@ public class PlayingCard
      * protected so subclasses may access is OK since they are constants and cannot be changed
      * 
      * static so it can be referenced using the class name. ie. no object required
+     *
+     * Readonly so it can't be changed - const is Ok too 
+     
      ***************************************************************************************************/
-
+//                            datatype  variable-name    = initial-value  ;
     protected static readonly CardValue DEFAULTCARDVALUE = CardValue.Joker;   // enum data-type for value
     protected static readonly CardColor DEFAULTCOLOR = CardColor.Black;
     protected static readonly CardSuit  DEFAULTSUIT = CardSuit.Joker;
@@ -58,14 +62,8 @@ public class PlayingCard
     private CardValue _value;   // use enum for data type- C# will enforce allowable values
     private CardColor _color;   // use enum for data type- C# will enforce allowable values
     private CardSuit  _suit;    // use enum for data type- C# will enforce allowable values
-
-    /***************************************************************************************************
-     * Properties
-     **************************************************************************************************
-
-     public CardValue Value {get; set;}
-     public CardValue Color {get; set;}
-     public CardValue Suit  {get; set;}
+    
+    
 
 
 

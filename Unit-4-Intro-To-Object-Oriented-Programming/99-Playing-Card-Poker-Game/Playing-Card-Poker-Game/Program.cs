@@ -17,7 +17,7 @@ public class Program
 	    
 	    // Run a Poker Game
 	    PokerGame aGame = new PokerGame();
-	    //aGame.run();   // Start of a Poker Game simulation
+	    aGame.run();   // Start of a Poker Game simulation
 
 
     }

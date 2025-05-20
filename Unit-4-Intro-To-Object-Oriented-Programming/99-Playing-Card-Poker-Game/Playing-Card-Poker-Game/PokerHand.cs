@@ -115,7 +115,7 @@ public class PokerHand  :   CardHand
 	 ****************************************************************************************************/
 	public PokerHandRanking RankHand()
 	{
-		PokerHand theHand = this;
+		PokerHand theHand = this;	//create a reference to the hand in the object
 		
 		theHand.SortByValue();
 
