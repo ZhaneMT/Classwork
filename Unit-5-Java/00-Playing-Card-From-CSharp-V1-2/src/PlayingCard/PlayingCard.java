@@ -139,7 +139,9 @@ public class PlayingCard
     public void setFaceUp(boolean faceUp) {
         this.faceUp = faceUp;
     }
-
+/*--------------
+ * C
+ */
     /***************************************************************************************************
      * additional getter and setter methods
      ***************************************************************************************************/
@@ -170,8 +172,8 @@ public class PlayingCard
          *                    not required if case issues a return statement at end of case
          *      default: - if none of the cases were true
          *           statement-to-run if none of cases were true
-         *           break; - exit switch - re   required on default case even though it is last
-         * }
+         *           break; - exit switch - re   C# required on default case even though it is last
+         * }                                    //JAVA does not!
          *************************************************************************************************************/
         switch (ivalue)                  // Check ivalue
         {
@@ -221,7 +223,6 @@ public class PlayingCard
                 break;      // break is required so we don't fall through to the next case - we exit the switch
             default:
                 this.color = DEFAULTCOLOR;  // break is needed here even through its last case
-                break;
         }
     }
 
@@ -239,13 +240,20 @@ public class PlayingCard
      * 
      ***************************************************************************************************/
     // Ask compiler to assure this is a valid super class override
-    public override string ToString()
+    public  ToString()
     { // Return a String representation of the object
-        return $"Playing Card: Value={_value}({(int)_value})\tSuit={_suit}\tColor={_color}\tFace Up={_faceUp}";
+        return "Playing Card: Value={_value}({(int)_value})\tSuit={_suit}\tColor={_color}\tFace Up={_faceUp}";
+    }
+
+    @Override
+    public String toString() {
+        return "PlayingCard{" +
+                "faceUp=" + faceUp +
+                '}';
     }
 
     // Ask compiler to assure this is a valid super class override
-    public override bool Equals(object otherObject)
+    public  Equals( otherObject)
     {   // Compare Two PlayingCards for equality - note generic Object parameter
     
         if (otherObject == this)
@@ -264,7 +272,7 @@ public class PlayingCard
         }
     }
     // Ask compiler to assure this is a valid super class override
-    public override int GetHashCode()
+    public  int GetHashCode()
     {   // Generate a hash Code for object if C# needs One e.g. for a HashMap
         // A hash code is a unique value representing an instance of an object
         // It is recommended to use member variables whose value is unlikely to change
@@ -274,7 +282,7 @@ public class PlayingCard
         //
         // The same variables used to determine object equality should be used
         //     when generating a hash code
-        return HashCode.Combine(value, suit, color);
+        return (value, suit, color);
     }
 
     /***************************************************************************************************
