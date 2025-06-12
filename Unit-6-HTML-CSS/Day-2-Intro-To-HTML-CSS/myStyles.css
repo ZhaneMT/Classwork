@@ -6,7 +6,23 @@
                                 }
 */  
 /* for now we use html tags as selectors */
+/*                                       {
+                                              css rule;
+                                              css rule;
+
+                                         }
+selectors are: tag-name - all elements defined witht his tag 
+              # - id = "" elements witht he same id = " " - used for specific element
+              . - class = " " elements with the class = " " - for a specific group of element
+*/
 
 html { /* style all the elements within the html tag */
     background-color: lightgoldenrodyellow;
+    font-size: 20px;
+    h2{ /* style all the h2 tags */
+      color : green 
+    }
+footer {/* style all the stuff in the footer */
+  color: red 
+}
 }
