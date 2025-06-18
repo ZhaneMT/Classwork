@@ -37,7 +37,15 @@ function variables() {
   console.table(stuff)
 
 }
-
+function varTest(){
+  {
+    let num = 10;
+  var someVariable = 10;
+}
+//let someVariable = 999;
+  console.log('someVariable contains: ${someVariable}')
+  console.log('num contains: ${num}') //ERROR! Because num is defined outside the block.
+}
 /**
  * Functions can also accept parameters.
  * Notice the parameters do not have types.
@@ -51,13 +59,13 @@ function printParameters(param1, param2) {
 
 /**
  * Compares two values x and y.
- * == is loose equality
+ * == is loose equality - values are the same but the types dont matter
  * === is strict equality
  * @param {Object} x
  * @param {Object} y
  */
 function equality(x, y) {
-  console.log(`x is ${typeof x}`);
+  console.log(`x is ${typeof x}`); //Typeof will return the data type of the variable
   console.log(`y is ${typeof y}`);
 
   console.log(`x == y : ${x == y}`); // true
@@ -83,11 +91,12 @@ function falsy(x) {
     - values can be primitive data types
     - values can be arrays
     - or they can be functions
+    -JSON - JAvaScript Onject Notation - How we share data on between devices
 */
 function objects() {
-  const person = {
-    firstName: "James T.",
-    lastName: "Kirk",
+  const person = {    //JavaScript objects are enclosed in {}
+    firstName: "James T.", // attributes in are specified with name: value
+    lastName: "Kirk", //multiple values are comma;
     age: 42,
     employees: [
       "Spock",
@@ -95,6 +104,9 @@ function objects() {
       "Uhura",
       "Scotty"
     ]
+
+    console.log(person);
+    console.log('')
   };
 
   // Log the object
