@@ -1,0 +1,11 @@
+
+div {
+border-radius: 50%;
+  transition: all 200ms;
+}
+#planet-visual {
+border-radius: 50%;
+  transition: all 200ms;
+  
+}
+
