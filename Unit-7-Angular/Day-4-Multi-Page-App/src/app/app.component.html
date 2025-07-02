@@ -6,6 +6,9 @@
 <!-- the data only flows in one direction from component to template -->
 <!-- {{ pageTitle }}  says go to the component and get the pageTitle -->
 <!-- data for a component is coded in the .ts file for the component -->
+
+<!-- Angular requires all images to be in the ../assests folder-->
+<!-- ../ says go up-->
 <div id="logo">
     <img src="../assets/images/GrandCircusLogo-H2.png"/>
 </div>
@@ -13,7 +16,7 @@
   
 <!-- nav-bar is an Angular component                       -->
 <!-- we want include the navigation bar with the URL paths -->
-<nav-bar></nav-bar>
+<nav-bar></nav-bar> <!-- nav-bar is selector in some angular-->
 <!-- router-outlet tells Angular we want to it's router    -->
 <!--               to manage our Single Page Application   -->
 <!-- the Angular router will switch between components     -->
