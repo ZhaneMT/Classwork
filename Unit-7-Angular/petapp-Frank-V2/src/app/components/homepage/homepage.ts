@@ -5,6 +5,7 @@
 
 import { Component } from '@angular/core';
 import { NavBar } from '../nav-bar/nav-bar';
+import { PetDisplay } from '../pet-display/pet-display';
 @Component({
   selector: 'home-page',
   standalone : true,  // Added so we can use the imports property
