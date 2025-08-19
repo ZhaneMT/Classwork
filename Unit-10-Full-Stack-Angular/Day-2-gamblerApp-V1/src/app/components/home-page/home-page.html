@@ -1,1 +1,14 @@
-<h1>This is our Home Page</h1>>
+<h1>List of Gamblers</h1>>
+<!--<tr> defines a row in the table-->
+<!-- <td> defines a column in the table-->
+<table>
+    @for (aGambler of theGamblers; track aGambler.id) {
+   <tr>
+        <td>{{aGambler.id}}</td>
+        <td>{{aGambler.name}}</td>
+        <td>{{aGambler.address}}</td>
+        <td>{{aGambler.salary}}</td>
+        <td>{{aGambler.birthDate}}</td>
+    </tr>
+}
+</table>
